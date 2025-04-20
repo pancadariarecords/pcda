@@ -618,3 +618,41 @@
     border-bottom: none;
   }
 }
+
+@media (max-width: 768px) {
+  .video-bg video {
+    object-position: center top;
+  }
+
+  .hero {
+    min-height: 80vh;
+    padding: 60px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .faixa {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .faixa .info-faixa {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .catalogo-lista {
+    gap: 10px;
+  }
+
+  .artistas-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+}
