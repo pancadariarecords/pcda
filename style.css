@@ -663,3 +663,70 @@
     gap: 20px;
   }
 }
+
+.merch-hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: #111;
+  color: #fff;
+}
+
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.merch-item {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  transition: transform 0.2s ease-in-out;
+}
+
+.merch-item:hover {
+  transform: translateY(-5px);
+}
+
+.merch-item img {
+  max-width: 300px;   /* limita o tamanho máximo */
+  width: 100%;        /* ajusta dentro do limite */
+  height: auto;
+  border-radius: 8px;
+  margin: 0 auto 15px auto; /* centraliza */
+  display: block;
+}
+
+.merch-item p {
+  font-size: 1.4rem;       /* aumenta a fonte da descrição */
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.merch-item .price {
+  font-size: 1.8rem;       /* destaque no preço */
+  font-weight: bold;
+  color: #1db954;          /* verde chamativo estilo Spotify */
+  margin-bottom: 15px;
+}
+
+
+.merch-item .btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #e63946;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.merch-item .btn:hover {
+  background: #ff4c61;
+}
