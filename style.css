@@ -1,0 +1,734 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: #0f0f0f;
+    color: #fff;
+  }
+  
+  /* Containers */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Header */
+  .header {
+    background: 
+      url('img/_bcd6d7f8-e88b-4ecc-9261-1a789e22090e.jpeg') repeat, 
+      #0d0d0d; /* textura + fundo escuro */
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-blend-mode: overlay;
+  }
+  
+
+  .header .container {
+    justify-content: center;
+    gap: 40px; /* espaço entre logo e nav */
+  }
+  
+  .logo {
+    height: 60px;
+  }
+
+  
+  
+  
+  .nav {
+    display: flex;
+    gap: 40px;
+  }
+
+  .nav a {
+    color: #cccccc;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.30rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav a:hover {
+    color: #fff;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background: none;
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('img/marc-fanelli-isla-xo4ValczbuA-unsplash.jpg') center/cover no-repeat;
+    filter: grayscale(50%) brightness(60%);
+    z-index: 0;
+  }
+  
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    font-size: 1.7rem;
+    margin-bottom: 30px;
+  }
+  
+  .btn, .btn-listen {
+    padding: 12px 30px;
+    background-color: #ccc;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  
+  .btn:hover,
+  .btn-listen:hover {
+    background-color: #999;
+    color: #000;
+  }
+  
+  /* Section Divider */
+.section-divider {
+    height: 2px;
+    background-color: #333;
+    margin: 40px auto;
+    width: 80%;
+    border-radius: 5px;
+    opacity: 0.3;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    color: #cccccc;
+    box-shadow: 0 0 15px rgba(#333);
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .nav {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-end;
+    }
+  
+    .container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .hero-content h1 {
+      font-size: 2.2rem;
+    }
+  
+    .hero-content p {
+      font-size: 1rem;
+    }
+  
+    .artistas-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  /* Artistas */
+  .artistas-section {
+    padding: 60px 20px;
+    background-color: #0e0e0e;
+    color: #f0f0f0;
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+  }
+  
+  .artistas-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #cccccc;
+    border-bottom: 2px solid #cccccc;
+    display: inline-block;
+    padding-bottom: 10px;
+  }
+  
+    /* Background de vídeo na sessão Artistas */
+.artistas-section {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.artistas-section .video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.artistas-section .video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.2); /* escurece o vídeo pra dar contraste no conteúdo */
+}
+
+.artistas-section .conteudo-artistas {
+  position: relative;
+  z-index: 2;
+}
+  .artistas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    justify-items: center;
+  }
+
+  
+  
+
+  
+
+
+
+  
+  /* Catálogo */
+  .catalogo {
+    padding: 60px 20px;
+    background-color: #0f0f0f;
+    text-align: center;
+  }
+  
+  .catalogo h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #cccccc;
+    border-bottom: 2px solid #cccccc;
+    display: inline-block;
+    padding-bottom: 10px;
+  }
+  
+  .catalogo-lista {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .faixa {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+    gap: 20px;
+  }
+  
+  .capa {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+  
+  .ano {
+    font-family: monospace;
+    font-size: 14px;
+    color: #999;
+    min-width: 60px;
+  }
+  
+  .info-faixa {
+    flex: 1;
+    margin-left: 20px;
+  }
+  
+  .titulo {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 700;
+  }
+  
+  .artista {
+    font-size: 14px;
+    color: #bbb;
+    margin-top: 2px;
+  }
+  
+  .btn-play {
+    font-size: 24px;
+    color: #1db954;
+    text-decoration: none;
+    transition: transform 0.2s;
+  }
+  
+  .btn-play:hover {
+    transform: scale(1.2);
+  }
+
+  .video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0; 
+  }
+  
+  .video-bg video {
+    width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.3); /* escurece o vídeo pra dar contraste no conteúdo */
+
+  }
+  
+  .catalogo {
+    position: relative;
+    z-index: 1;
+    padding: 80px 20px;
+    color: white;
+  }
+  
+  .conteudo-catalogo {
+    position: relative;
+    z-index: 2;
+  }
+  
+
+
+  .sobre-section {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .sobre-section .video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  .sobre-section .video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+  }
+  
+  .sobre-section .conteudo-sobre {
+    position: relative;
+    z-index: 2;
+    color: #cccccc;
+  }
+  
+  .titulo-sessao {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+    color: #cccccc;
+  }
+  
+  .titulo-sessao::after {
+    content: '';
+    display: flex;
+    width: 90px;
+    height: 2px;
+    background: #cccccc;
+    margin: 10px auto 0 auto;
+    opacity: 0.9;
+  }
+  
+  .conteudo-sobre {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-size: 1.2rem;
+  }
+  
+  #sobre p {
+    margin-bottom: 20px; /* ou o valor que quiser */
+  }
+  
+  
+  /* Contato */
+  .contato-section-com-bg {
+    background-color: #1a1a1a;
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
+    position: relative;
+    color: #fff;
+  }
+  
+  .contato-overlay {
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(203, 203, 203, 0.15);
+    text-align: center;
+  }
+  
+  .contato-section-com-bg h2 {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    color: #fff;
+  }
+  
+  .contato-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .contato-info,
+  .envie-som {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(204, 204, 204, 0.15);
+  }
+  
+  /* Links */
+  a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+
+  #artistas,
+#catalogo,
+#contato,
+#hero {
+  scroll-margin-top: 100px; /* ajuste se seu header for maior ou menor */
+}
+
+
+/* Responsividade para telas menores (mobile first) */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .nav a {
+    padding: 10px 0;
+  }
+
+  .hero {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .catalogo-lista {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .faixa {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .capa {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1100;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.95);
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 1000;
+    text-align: center;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 10px 0;
+    color: white;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .nav a:last-child {
+    border-bottom: none;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .video-bg video {
+    object-position: center top;
+  }
+
+  .hero {
+    min-height: 80vh;
+    padding: 60px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .faixa {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .faixa .info-faixa {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .catalogo-lista {
+    gap: 10px;
+  }
+
+  .artistas-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-bg video {
+    object-position: center top;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 80vh;
+    padding: 60px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .faixa {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .faixa .info-faixa {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .catalogo-lista {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .artistas-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+}
+
+.merch-hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: #111;
+  color: #fff;
+}
+
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.merch-item {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  transition: transform 0.2s ease-in-out;
+}
+
+.merch-item:hover {
+  transform: translateY(-5px);
+}
+
+.merch-item img {
+  max-width: 300px;   /* limita o tamanho máximo */
+  width: 100%;        /* ajusta dentro do limite */
+  height: auto;
+  border-radius: 8px;
+  margin: 0 auto 15px auto; /* centraliza */
+  display: block;
+}
+
+.merch-item p {
+  font-size: 1.4rem;       /* aumenta a fonte da descrição */
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.merch-item .price {
+  font-size: 1.8rem;       /* destaque no preço */
+  font-weight: bold;
+  color: #1db954;          /* verde chamativo estilo Spotify */
+  margin-bottom: 15px;
+}
+
+
+.merch-item .btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #e63946;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.merch-item .btn:hover {
+  background: #ff4c61;
+}
+
+
